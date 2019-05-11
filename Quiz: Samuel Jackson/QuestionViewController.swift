@@ -80,7 +80,7 @@ class QuestionViewController: UIViewController {
             currentQuestion = notAnsweredQuestions.shuffled().first!
             progressBar.progress += 1 / Float(totalQuestions)
         } else {
-            print("cabou")
+            self.performSegue(withIdentifier: "goToResults", sender: self)
         }
     }
     

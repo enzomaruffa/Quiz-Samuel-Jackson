@@ -81,6 +81,70 @@ class AppData {
                      impressions: 0,
                      rightAnswers: 0,
                      answered: false))
+        
+        questions.append(
+            Question(phrase: "Hamburgers! The cornerstone of any nutritious breakfast",
+                     isFromSJ: true,
+                     originalContext: "Also from Pulp Fiction, this is one of SJs most iconic phrases!",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "I'm as serious as a heart attack.",
+                     isFromSJ: true,
+                     originalContext: "Jackie Brown!",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "Mankind is the virus, and I'm the cure.",
+                     isFromSJ: true,
+                     originalContext: "Kingsman!",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "Yeah, Zeus! As in, father of Apollo? Mount Olympus? Don't f**k with me or I'll shove a lightning bolt up your a**!",
+                     isFromSJ: true,
+                     originalContext: "He indeed says some bad words. Die Hard With a Vengeance!",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "Frankly, my dear, I don't give a damn.",
+                     isFromSJ: false,
+                     originalContext: "Gone With the Wind!",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "Houston, we have a problem",
+                     isFromSJ: false,
+                     originalContext: "Apollo 13!",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "Yippie-ki-yay, mother f**ker!",
+                     isFromSJ: false,
+                     originalContext: "Die Hard!",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "I love the smell of napalm in the morning.",
+                     isFromSJ: false,
+                     originalContext: "Apocalypse Now!",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
         return questions.shuffled()
     }
     
