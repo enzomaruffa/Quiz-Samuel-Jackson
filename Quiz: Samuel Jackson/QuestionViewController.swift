@@ -10,6 +10,8 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
+    @IBOutlet var backgroundView: UIView!
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var phraseLabel: UILabel!
     
@@ -25,6 +27,14 @@ class QuestionViewController: UIViewController {
     var normalSamuel = UIImage(named: "samuel-confused")
     var mirroredSamuel = UIImage(named: "samuel-confused-mirrored")
     var mirrored = true
+    
+    var yes = UIImage(named: "yes1")
+    var yesMirrored = UIImage(named: "yes2")
+    var isYesMirrored = true
+    
+    var no = UIImage(named: "no1")
+    var noMirrored = UIImage(named: "no2")
+    var isNoMirrored = true
     
     var currentQuestion : Question? {
         didSet {
@@ -49,23 +59,40 @@ class QuestionViewController: UIViewController {
             self.backgroundImageView.transform = CGAffineTransform.identity.scaledBy(x:1.5, y:1.5)
         }) { (_) in }
 
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(mirrorButtonYes), userInfo: nil, repeats: true)
+        
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(mirrorButtonNo), userInfo: nil, repeats: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mirrorButtonYes()
+        mirrorButtonNo()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         print("disappear")
-        
-        if self.isMovingFromParent {
-            AppData.sharedInstance.user.points = 0
-            AppData.sharedInstance.resetQuestions()
-        }
     }
     
     func mirrorBackground() {
         backgroundImageView.image = mirrored ? normalSamuel : mirroredSamuel
         mirrored = !mirrored
     }
+    
+    @objc func mirrorButtonYes() {
+        let image = isYesMirrored ? yes : yesMirrored
+        yesButton.setImage(image, for: .normal)
+        isYesMirrored = !isYesMirrored
+    }
+    
+    @objc func mirrorButtonNo() {
+        let image = isNoMirrored ? no : noMirrored
+        noButton.setImage(image, for: .normal)
+        isNoMirrored = !isNoMirrored
+    }
+    
     
     func getNewQuestion() {
         if let currentQuestion = self.currentQuestion {
@@ -76,7 +103,7 @@ class QuestionViewController: UIViewController {
         
         print(notAnsweredQuestions.count)
         
-        if notAnsweredQuestions.count > 0 {
+        if answeredQuestions < 20 {
             currentQuestion = notAnsweredQuestions.shuffled().first!
             progressBar.progress += 1 / Float(totalQuestions)
         } else {
@@ -113,11 +140,14 @@ class QuestionViewController: UIViewController {
     
     func answeredRight() {
         currentQuestion!.rightAnswers += 1
-        AppData.sharedInstance.user.points += 1
+        AppData.sharedInstance.currentPoints += 1
+        
         hapticNotification.notificationOccurred(.success)
         
         audioHelper.playSound(right: true)
         answeredQuestions += 1
+        
+        flashScreen(color: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
     }
     
     func answeredWrong() {
@@ -125,6 +155,18 @@ class QuestionViewController: UIViewController {
         
         audioHelper.playSound(right: false)
         answeredQuestions += 1
+        
+        flashScreen(color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))
+    }
+    
+    func flashScreen(color : UIColor) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: [], animations: {
+            self.backgroundView.backgroundColor = color
+        }) { (_) in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.backgroundView.backgroundColor = .white
+            })
+        }
     }
     
     func unfadeMovingUp(view : UIView, duration : Double) {
