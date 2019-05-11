@@ -24,4 +24,8 @@ class Question {
         self.rightAnswers = rightAnswers
         self.answered = answered
     }
+    
+    func resetQuestion() {
+        answered = false
+    }
 }

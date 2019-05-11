@@ -57,11 +57,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjx-yd-oP7" userLabel="MenuContainer">
                                 <rect key="frame" x="0.0" y="475" width="414" height="448"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SamuelJacksonConfusionFace" translatesAutoresizingMaskIntoConstraints="NO" id="Rah-cR-GgG">
-                                        <rect key="frame" x="-60" y="0.0" width="596" height="448"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Rah-cR-GgG" secondAttribute="height" multiplier="141:106" id="sfO-4m-WG8"/>
-                                        </constraints>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="samuel-confused-mirrored" translatesAutoresizingMaskIntoConstraints="NO" id="Rah-cR-GgG">
+                                        <rect key="frame" x="-9.5" y="0.0" width="433" height="448"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJy-ZT-iGe">
                                         <rect key="frame" x="114" y="117" width="189" height="48"/>
@@ -93,8 +90,8 @@
                                     <constraint firstItem="Rah-cR-GgG" firstAttribute="top" secondItem="bJy-ZT-iGe" secondAttribute="bottom" constant="-165" id="Ouh-5d-L5f"/>
                                     <constraint firstItem="Rah-cR-GgG" firstAttribute="height" secondItem="sjx-yd-oP7" secondAttribute="height" id="b0U-bu-Qxc"/>
                                     <constraint firstItem="69P-wy-JYc" firstAttribute="trailing" secondItem="bJy-ZT-iGe" secondAttribute="trailing" id="cdw-He-IDw"/>
-                                    <constraint firstItem="Rah-cR-GgG" firstAttribute="leading" secondItem="sjx-yd-oP7" secondAttribute="leading" constant="-60" id="iXS-rh-NST"/>
                                     <constraint firstAttribute="bottom" secondItem="Rah-cR-GgG" secondAttribute="bottom" id="wSa-Hr-mgx"/>
+                                    <constraint firstItem="Rah-cR-GgG" firstAttribute="centerX" secondItem="sjx-yd-oP7" secondAttribute="centerX" id="zD7-1Z-5xQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -116,10 +113,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="nue-NT-dqk"/>
+                    <connections>
+                        <outlet property="headerContainer" destination="GxX-kq-g12" id="gwC-wQ-piG"/>
+                        <outlet property="menuBackgroundImageView" destination="Rah-cR-GgG" id="qrK-Kh-7gY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790" y="128"/>
+            <point key="canvasLocation" x="781" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FoC-iX-x3K">
@@ -152,8 +153,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-Cr-VaO" userLabel="HeaderContainer">
                                 <rect key="frame" x="0.0" y="88" width="414" height="155"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Did Samuel Jackson say?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="01e-UK-BVv">
-                                        <rect key="frame" x="41" y="24" width="331" height="114.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did Samuel Jackson say?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="01e-UK-BVv">
+                                        <rect key="frame" x="41.5" y="23" width="331" height="108.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="47"/>
                                         <color key="textColor" red="0.70154215909999995" green="0.0" blue="0.90659407380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -163,7 +164,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="01e-UK-BVv" firstAttribute="height" secondItem="Ffr-Cr-VaO" secondAttribute="height" multiplier="0.7" id="4vZ-Wv-BdK"/>
                                     <constraint firstItem="01e-UK-BVv" firstAttribute="centerX" secondItem="Ffr-Cr-VaO" secondAttribute="centerX" id="LOI-UU-GgG"/>
+                                    <constraint firstItem="01e-UK-BVv" firstAttribute="width" secondItem="Ffr-Cr-VaO" secondAttribute="width" multiplier="0.8" id="YAe-8q-rsf"/>
                                     <constraint firstItem="01e-UK-BVv" firstAttribute="centerY" secondItem="Ffr-Cr-VaO" secondAttribute="centerY" id="kpc-Vn-6Td"/>
                                 </constraints>
                             </view>
@@ -188,32 +191,46 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqq-SG-Ul0" userLabel="MenuContainer">
                                 <rect key="frame" x="0.0" y="475" width="414" height="448"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SamuelJacksonConfusionFace" translatesAutoresizingMaskIntoConstraints="NO" id="lLR-tI-Pg4">
-                                        <rect key="frame" x="-60" y="0.0" width="596" height="448"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="lLR-tI-Pg4" secondAttribute="height" multiplier="141:106" id="B3c-ZB-A0Y"/>
-                                        </constraints>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="samuel-confused-mirrored" translatesAutoresizingMaskIntoConstraints="NO" id="lLR-tI-Pg4">
+                                        <rect key="frame" x="-9.5" y="0.0" width="433" height="448"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-2U-mfg" userLabel="Hell yeah">
                                         <rect key="frame" x="296" y="209" width="68" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Hell yeah!"/>
+                                        <connections>
+                                            <action selector="yesPress:" destination="xzS-Ca-r9X" eventType="touchUpInside" id="0k8-tk-GlN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="858-pN-wK8" userLabel="No way">
                                         <rect key="frame" x="60" y="209" width="55" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="No way!"/>
+                                        <connections>
+                                            <action selector="noPress:" destination="xzS-Ca-r9X" eventType="touchUpInside" id="slm-aC-YiW"/>
+                                        </connections>
                                     </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="q6h-P2-Jpd">
+                                        <rect key="frame" x="0.0" y="359" width="414" height="11"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="cDl-Fk-DXC"/>
+                                        </constraints>
+                                        <color key="progressTintColor" red="0.56937987140000001" green="0.1380042605" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="trackTintColor" red="1" green="0.51064884659999998" blue="0.0029529179449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </progressView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="lLR-tI-Pg4" firstAttribute="height" secondItem="uqq-SG-Ul0" secondAttribute="height" id="EVp-pd-mwN"/>
+                                    <constraint firstItem="q6h-P2-Jpd" firstAttribute="width" secondItem="uqq-SG-Ul0" secondAttribute="width" id="EdH-9P-Y4q"/>
                                     <constraint firstItem="kgG-2U-mfg" firstAttribute="centerY" secondItem="858-pN-wK8" secondAttribute="centerY" id="GXN-76-Kvc"/>
-                                    <constraint firstItem="858-pN-wK8" firstAttribute="centerY" secondItem="lLR-tI-Pg4" secondAttribute="centerY" id="XYo-dL-Je0"/>
+                                    <constraint firstItem="q6h-P2-Jpd" firstAttribute="centerX" secondItem="uqq-SG-Ul0" secondAttribute="centerX" id="Itx-HK-Yo1"/>
+                                    <constraint firstAttribute="bottom" secondItem="q6h-P2-Jpd" secondAttribute="bottom" constant="79" id="J82-64-g8L"/>
                                     <constraint firstItem="858-pN-wK8" firstAttribute="leading" secondItem="uqq-SG-Ul0" secondAttribute="leading" constant="60" id="dd2-MS-y19"/>
                                     <constraint firstAttribute="bottom" secondItem="lLR-tI-Pg4" secondAttribute="bottom" id="edL-If-OuM"/>
-                                    <constraint firstItem="lLR-tI-Pg4" firstAttribute="leading" secondItem="uqq-SG-Ul0" secondAttribute="leading" constant="-60" id="fbf-11-HAj"/>
+                                    <constraint firstItem="lLR-tI-Pg4" firstAttribute="centerX" secondItem="uqq-SG-Ul0" secondAttribute="centerX" id="nCI-dz-YSF"/>
                                     <constraint firstAttribute="trailing" secondItem="kgG-2U-mfg" secondAttribute="trailing" constant="50" id="nzL-N5-BxG"/>
+                                    <constraint firstItem="858-pN-wK8" firstAttribute="centerY" secondItem="uqq-SG-Ul0" secondAttribute="centerY" id="xOW-iC-CzG"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -236,16 +253,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="bPO-OD-egb"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="lLR-tI-Pg4" id="anC-Fz-l9y"/>
                         <outlet property="noButton" destination="858-pN-wK8" id="iB2-Jl-ESk"/>
+                        <outlet property="phraseLabel" destination="fdX-Ge-1Mr" id="tFf-pz-lC2"/>
+                        <outlet property="progressBar" destination="q6h-P2-Jpd" id="7ND-te-aJz"/>
                         <outlet property="yesButton" destination="kgG-2U-mfg" id="ldn-Cv-t2q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AG-vc-7Vx" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="128"/>
+            <point key="canvasLocation" x="1750.7246376811595" y="138.61607142857142"/>
         </scene>
     </scenes>
     <resources>
-        <image name="SamuelJacksonConfusionFace" width="665" height="323"/>
+        <image name="samuel-confused-mirrored" width="433" height="577"/>
     </resources>
 </document>
