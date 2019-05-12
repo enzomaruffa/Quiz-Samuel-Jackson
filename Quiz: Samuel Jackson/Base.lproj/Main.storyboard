@@ -144,7 +144,7 @@
             </objects>
             <point key="canvasLocation" x="-113" y="139"/>
         </scene>
-        <!--Question View Controller-->
+        <!--QUIZ TIME-->
         <scene sceneID="J88-EO-PIc">
             <objects>
                 <viewController id="xzS-Ca-r9X" customClass="QuestionViewController" customModule="Quiz__Samuel_Jackson" customModuleProvider="target" sceneMemberID="viewController">
@@ -295,7 +295,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssb-wK-Xhm"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bPO-OD-egb"/>
+                    <navigationItem key="navigationItem" title="QUIZ TIME" id="bPO-OD-egb"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="lLR-tI-Pg4" id="anC-Fz-l9y"/>
                         <outlet property="backgroundView" destination="cei-xr-H70" id="Waq-IH-40b"/>
@@ -419,7 +419,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LJr-ze-amY" firstAttribute="height" secondItem="75A-r2-esS" secondAttribute="height" multiplier="0.6" id="Gcv-dJ-hF6"/>
                             <constraint firstItem="LJr-ze-amY" firstAttribute="top" secondItem="bFm-ed-a6U" secondAttribute="bottom" id="V2B-Ns-43e"/>
@@ -442,7 +442,7 @@
             </objects>
             <point key="canvasLocation" x="3564" y="139"/>
         </scene>
-        <!--Enter Name View Controller-->
+        <!--SUBMIT-->
         <scene sceneID="0c0-bh-ZYA">
             <objects>
                 <viewController id="A8R-Qc-0ll" customClass="EnterNameViewController" customModule="Quiz__Samuel_Jackson" customModuleProvider="target" sceneMemberID="viewController">
@@ -567,7 +567,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jjb-xB-lnY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Drf-pG-vqQ"/>
+                    <navigationItem key="navigationItem" title="SUBMIT" id="Drf-pG-vqQ"/>
                     <connections>
                         <outlet property="nameTextField" destination="54u-SP-LMV" id="GAN-JG-Icp"/>
                         <outlet property="pointsLabel" destination="WhH-TT-zCJ" id="cYV-1n-YDI"/>

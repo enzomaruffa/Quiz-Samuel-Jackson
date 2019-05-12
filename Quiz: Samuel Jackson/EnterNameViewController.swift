@@ -27,14 +27,19 @@ class EnterNameViewController: UIViewController, UITextFieldDelegate {
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(paintPoints), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
         
-        
         // moves view up if keyboards is open
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        self.navigationController?.navigationItem.backBarButtonItem?.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
+        
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         pointsLabel.text = AppData.sharedInstance.currentPoints.description
     }
