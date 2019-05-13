@@ -70,6 +70,7 @@
                                             <color key="titleColor" red="0.56862745100000001" green="0.13725490200000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="playPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xRT-KO-5dk"/>
                                             <segue destination="xzS-Ca-r9X" kind="show" id="JfP-qp-Xvu"/>
                                         </connections>
                                     </button>

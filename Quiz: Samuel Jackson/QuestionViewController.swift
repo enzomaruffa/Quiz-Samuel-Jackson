@@ -20,7 +20,7 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var progressBar: UIProgressView!
     
-    let audioHelper = AudioHelper()
+    let audioHelper = AudioHelper.sharedInstance
     
     let hapticNotification = UINotificationFeedbackGenerator()
     
@@ -107,6 +107,7 @@ class QuestionViewController: UIViewController {
             currentQuestion = notAnsweredQuestions.shuffled().first!
             progressBar.progress += 1 / Float(totalQuestions)
         } else {
+            audioHelper.playFinishedSound()
             self.performSegue(withIdentifier: "goToResults", sender: self)
         }
     }
@@ -144,7 +145,7 @@ class QuestionViewController: UIViewController {
         
         hapticNotification.notificationOccurred(.success)
         
-        audioHelper.playSound(right: true)
+        audioHelper.playQuestionSound(right: true)
         answeredQuestions += 1
         
         flashScreen(color: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
@@ -153,7 +154,7 @@ class QuestionViewController: UIViewController {
     func answeredWrong() {
         hapticNotification.notificationOccurred(.error)
         
-        audioHelper.playSound(right: false)
+        audioHelper.playQuestionSound(right: false)
         answeredQuestions += 1
         
         flashScreen(color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))

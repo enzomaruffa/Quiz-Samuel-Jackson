@@ -11,17 +11,20 @@ import AVFoundation
 
 class AudioHelper {
     
+    static var sharedInstance : AudioHelper = AudioHelper()
+    
+    private init() {
+        
+    }
+    
     var player: AVAudioPlayer?
     
-    let rightSounds = ["selfesteem"]
-    let wrongSounds = ["youcantsayno"]
+    let rightSounds = ["selfesteem", "yes", "correct"]
+    let wrongSounds = ["youcantsayno", "nono"]
     
-    func playSound(right: Bool) {
-        let name = right ? rightSounds.shuffled().first! : wrongSounds.shuffled().first!
-        print("playing", name)
-        
-        guard let url = Bundle.main.url(forResource: "sounds/" + name, withExtension: "mp3") else { return }
-        
+    let iamsamuel = "sam"
+    
+    fileprivate func playSound(_ url: URL) {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
@@ -39,6 +42,29 @@ class AudioHelper {
         } catch let error {
             print(error.localizedDescription)
         }
+    }
+    
+    func playQuestionSound(right: Bool) {
+        let name = right ? rightSounds.shuffled().first! : wrongSounds.shuffled().first!
+        print("playing", name)
+        
+        guard let url = Bundle.main.url(forResource: "sounds/" + name, withExtension: "mp3") else { return }
+        playSound(url)
+    }
+    
+    func playNameSound() {
+        guard let url = Bundle.main.url(forResource: "sounds/sam", withExtension: "mp3") else { return }
+        playSound(url)
+    }
+    
+    func playConcentrationSound() {
+        guard let url = Bundle.main.url(forResource: "sounds/concentration", withExtension: "mp3") else { return }
+        playSound(url)
+    }
+    
+    func playFinishedSound() {
+        guard let url = Bundle.main.url(forResource: "sounds/finished", withExtension: "mp3") else { return }
+        playSound(url)
     }
     
 }

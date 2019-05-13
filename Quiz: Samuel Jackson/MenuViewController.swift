@@ -19,11 +19,17 @@ class MenuViewController: UIViewController {
     var mirrored = true
     var timer : Timer?
     
+    let audioHelper = AudioHelper.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //mirrorBackground()
         
         createParticles()
+    }
+    
+    @IBAction func playPress(_ sender: Any) {
+        audioHelper.playNameSound()
     }
     
     func createParticles() {

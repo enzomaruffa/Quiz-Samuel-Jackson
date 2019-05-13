@@ -14,7 +14,7 @@ class AppData {
     var questions : [Question] = AppData.generateQuestions()
     var results : [Result] = [] {
         didSet {
-            results.sort(by: <)
+            results.sort(by: >)
         }
     }
     var currentPoints = 0
