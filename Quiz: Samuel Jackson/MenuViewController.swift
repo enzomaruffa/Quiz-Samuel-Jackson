@@ -14,6 +14,8 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var headerContainer: UIView!
     
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     var normalSamuel = UIImage(named: "samuel-confused")
     var mirroredSamuel = UIImage(named: "samuel-confused-mirrored")
     var mirrored = true
@@ -71,7 +73,7 @@ class MenuViewController: UIViewController {
     @objc func mirrorBackground() {
         menuBackgroundImageView.image = mirrored ? normalSamuel : mirroredSamuel
         mirrored = !mirrored
-        timer = Timer.scheduledTimer(timeInterval: Double.random(in: 0.5...1.5), target: self, selector: #selector(mirrorBackground), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: Double.random(in: 0.3...1.5), target: self, selector: #selector(mirrorBackground), userInfo: nil, repeats: false)
     }
 
     /*

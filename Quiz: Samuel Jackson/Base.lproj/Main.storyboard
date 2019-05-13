@@ -121,6 +121,7 @@
                     <navigationItem key="navigationItem" id="nue-NT-dqk"/>
                     <connections>
                         <outlet property="headerContainer" destination="GxX-kq-g12" id="gwC-wQ-piG"/>
+                        <outlet property="logoImageView" destination="Zf7-7l-lx6" id="jEk-Dm-c31"/>
                         <outlet property="menuBackgroundImageView" destination="Rah-cR-GgG" id="qrK-Kh-7gY"/>
                     </connections>
                 </viewController>
@@ -601,9 +602,12 @@
                                         <rect key="frame" x="41.5" y="416.5" width="331" height="48"/>
                                         <color key="backgroundColor" red="0.56937987140000001" green="0.1380042605" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <color key="tintColor" red="1" green="0.51064884659999998" blue="0.0029529179449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
                                         <state key="normal" title="SUBMIT">
                                             <color key="titleColor" red="1" green="0.51064884659999998" blue="0.0029529179449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="submitClicked:" destination="A8R-Qc-0ll" eventType="touchUpInside" id="koR-hc-ltM"/>

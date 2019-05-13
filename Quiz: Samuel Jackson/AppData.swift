@@ -193,11 +193,11 @@ class AppData {
         
         questions.append(
             Question(phrase: "Elementary, my dear Watson",
-                     isFromSJ: false,
-                     originalContext: "Sherlock Holmes!",
-                     impressions: 0,
-                     rightAnswers: 0,
-                     answered: false))
+                      isFromSJ: false,
+                      originalContext: "Sherlock Holmes!",
+                      impressions: 0,
+                      rightAnswers: 0,
+                      answered: false))
         
         questions.append(
             Question(phrase: "I recognize that the council has made a decision, but given that it’s a stupid-ass decision, I’ve elected to ignore it",
@@ -230,6 +230,88 @@ class AppData {
                      impressions: 0,
                      rightAnswers: 0,
                      answered: false))
+        
+        questions.append(
+            Question(phrase: "I hate this hacker crap!",
+                     isFromSJ: true,
+                     originalContext: "Jurassic Park",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "We're all gonna be like three little fonzies here!",
+                     isFromSJ: true,
+                     originalContext: "Restaurant scene from Pulp Fiction",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "AK-47. The very best there is. When you absolutely, positively got to kill every motherf*cker in the room, accept no substitutes.",
+                     isFromSJ: true,
+                     originalContext: "Jackie Brown",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "Yes, they deserve to die and I hope they burn in hell!",
+                     isFromSJ: true,
+                     originalContext: "A time to kill",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "You know me. It's my duty to please that booty!",
+                     isFromSJ: true,
+                     originalContext: "Restaurant scene from Pulp Fiction",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "Here's looking at you, kid.",
+                     isFromSJ: false,
+                     originalContext: "Casablanca",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "You talkin' to me? Well I'm the only one here. Who the f*ck do you think you're talking to?",
+                     isFromSJ: false,
+                     originalContext: "Absolute crazy improvisation of DeNiro in Taxi Driver",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+        
+        questions.append(
+            Question(phrase: "Say hello to my little friend!",
+                     isFromSJ: false,
+                     originalContext: "Pacino going nuts on Scarface",
+                     impressions: 0,
+                     rightAnswers: 0,
+                     answered: false))
+            
+            questions.append(
+                Question(phrase: "In France they call it royale with cheese",
+                         isFromSJ: false,
+                         originalContext: "That one is actually tricky because it's from Pulp Fiction, but Vincent said it",
+                         impressions: 0,
+                         rightAnswers: 0,
+                         answered: false))
+                
+                questions.append(
+                    Question(phrase: "Mama says, 'stupid is as stupid does'.",
+                             isFromSJ: false,
+                             originalContext: "Forrest Gump telling one of his stories",
+                             impressions: 0,
+                             rightAnswers: 0,
+                             answered: false))
+                
+                
         return questions.shuffled()
     }
     
